@@ -1,0 +1,17 @@
+[
+    {
+        "subject": "ANIM",
+        "course_number": "140",
+        "instruction_type": "Lecture",
+        "delivery_method": "Face To Face",
+        "section": "009",
+        "course_url": "https://termmasterschedule.drexel.edu/webtms_du/courseDetails/26154?crseNumb=140",
+        "crn": 26154,
+        "course_title": "Computer Graphics Imagery I",
+        "day": "F",
+        "time": "12:00 pm - 02:50 pm",
+        "start_date": "Mar 18, 2022",
+        "final_exam": "Final Exam:\r\n01:00 pm - 03:00 pm",
+        "instructor": "Matthew C Rotella"
+    }
+]

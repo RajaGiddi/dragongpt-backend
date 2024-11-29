@@ -24,8 +24,8 @@ load_dotenv(dotenv_path='.env.local')
 df = pd.read_csv('data_collection/tms/winter-tms.csv')
 
 
-engine = create_engine("sqlite:///winterTms.db")
-#df.to_sql("winterTms", engine, index=False)
+engine = create_engine("sqlite:///course_scheduler/winterTms.db")
+#df.to_sql("winterTms", engine, index=False) # Uncomment this line to create the database
 db = SQLDatabase(engine=engine)
 
 prompt = ChatPromptTemplate.from_messages(
@@ -186,9 +186,11 @@ runnable = prompt | llm.with_structured_output(
     include_raw=False,
 )
 
+user_input = input("Enter your course scheduling query: ")
+
 response = runnable.invoke(
     {
-        "text": "I'm a freshman and would like to take ANIM 140 and COM 220 next term.",
+        "text": user_input,
         "examples": messages,
     }
 )
@@ -230,9 +232,6 @@ query = f"""
 """
 
 output_response = db.run(query)
-
-import json
-import ast
 
 try:
     output_response = ast.literal_eval(output_response)
